@@ -1,4 +1,4 @@
-package com.finytec.transaction.bank.transaction_producer;
+package com.finytec.transaction.bank.transaction.producer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

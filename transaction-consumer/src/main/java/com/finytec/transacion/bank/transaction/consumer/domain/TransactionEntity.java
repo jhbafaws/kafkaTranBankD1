@@ -1,21 +1,44 @@
-package com.finytec.transaction.bank.transaction_producer.model;
+package com.finytec.transacion.bank.transaction.consumer.domain;
 
-public class Transaction {
-    private String id;
+import jakarta.persistence.*;
+
+import java.util.UUID;
+
+@Entity
+@Table(name = "transactions")
+
+public class TransactionEntity {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", unique = true)
+    private UUID id;
+    @Column(name = "source_account")
     private String sourceAccount;
+
+    @Column(name = "destination_account")
     private String destinationAccount;
+
+    @Column(name = "amount")
     private double amount;
+
+    @Column(name = "type")
     private String type;
+
+    @Column(name = "timestamp")
     private String timestamp;
 
-    public Transaction() {
+    public TransactionEntity() {
     }
 
-    public String getId() {
+// Getters y setters
+
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
